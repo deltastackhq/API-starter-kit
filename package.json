@@ -1,0 +1,51 @@
+{
+  "name": "crypto-fund-me-api",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development nodemon --exec babel-node src/server.js",
+    "build:server": "rm -r build && babel src -d build",
+    "launch:server": "npm run build:server && npm run start",
+    "start": "cross-env NODE_ENV=production node build/server.js",
+    "lint": "eslint src",
+    "lint-fix": "eslint src --ext .js --fix",
+    "test": "cross-env NODE_ENV=test PORT=5003 jest --verbose --runInBand"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/delta-stack/Cryptofundme-API.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/delta-stack/Cryptofundme-API/issues"
+  },
+  "homepage": "https://github.com/delta-stack/Cryptofundme-API#readme",
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/node": "^7.8.7",
+    "@babel/plugin-transform-runtime": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "jest": "^25.2.3",
+    "nodemon": "^2.0.2",
+    "supertest": "^4.0.2"
+  },
+  "dependencies": {
+    "@hapi/joi": "^17.1.1",
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.2",
+    "dotenv": "^8.2.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.6",
+    "morgan": "^1.10.0",
+    "nanoid": "^3.0.0",
+    "socket.io": "^2.3.0"
+  }
+}
